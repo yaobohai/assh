@@ -40,9 +40,16 @@ chmod +x /Users/$(whoami)/Documents/assh/*.sh
 
 ```shell
 $ assh
+=================主机快捷管理==============
+0: node01
+1: node02
+2: node03
+===========================================
+Enter serial number connection(0):
 
 ## example: assh
 ```
+
 ### 3.命令行登陆(序号版)
 
 ```shell
