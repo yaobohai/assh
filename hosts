@@ -1,0 +1,10 @@
+# 有注释有标签: assh 对此主机生效
+# 无注释无标签: ansible 对此主机生效
+# 无注释有标签: assh 、ansible 均对此主机生效
+# 有注释无标签: ansible 生效、assh 不对此主机生效
+
+# 主机组           # ssh用户                    # ssh密码（如果有免密可为空）     # ssh端口                    # 主机名称
+[demo]
+192.168.60.1      ansible_ssh_user=root       ansible_ssh_pass=xxx          ansible_ssh_port=22         host_tag=node01
+192.168.60.2      ansible_ssh_user=root       ansible_ssh_pass=passwd       ansible_ssh_port=22         host_tag=node02
+192.168.60.3      ansible_ssh_user=root       ansible_ssh_pass=xxx          ansible_ssh_port=22         host_tag=node03
