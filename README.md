@@ -30,6 +30,11 @@ $ vim /Users/$(whoami)/Documents/assh/hosts
 $ vim ~/.zshrc
 alias assh='/Users/$(whoami)/Documents/assh/assh.sh'
 ```
+增加权限
+
+```shell
+chmod +x /Users/$(whoami)/Documents/assh/*.sh
+```
 
 ### 2.交互式菜单
 
