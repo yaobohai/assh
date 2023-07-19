@@ -1,6 +1,6 @@
 ## SSH管理工具
 
-一个适用于的用于快速连接ssh的脚本工具
+一个用于快速连接ssh的脚本工具
 
 ### 概述
 
@@ -39,7 +39,7 @@ MacOS
 $ vim /Users/$(whoami)/Documents/assh/hosts
 
 Linux
-$ vim /usr/local/hosts/hosts
+$ vim /usr/local/assh/hosts
 ```
 
 配置环境变量
@@ -51,8 +51,11 @@ alias assh='/Users/$(whoami)/Documents/assh/assh.sh'
 
 Linux
 $ vim ~/.bashrc
-alias assh='/Users/$(whoami)/Documents/assh/assh.sh'
+alias assh='/usr/local/assh/assh.sh'
+
+配置完成后新打开终端配置生效
 ```
+
 增加权限
 
 ```shell
@@ -83,26 +86,6 @@ Enter serial number connection(0):
 $ assh 序号
 
 ## example: assh 0
-```
-
-### 4.命令行登陆(密码版)
-
-```shell
-$ assh -o 用户名@IP
-或
-$ assh -o 用户名@IP -p 密码
-
-## example: assh -o root@116.63.254.156 (需配置用户白名单)
-## example: assh -o root@116.63.254.156 -p asddaa...
-```
-
-注意: `.authfile` 文件为用户白名单配置;当使用 `-o` 参数连接主机时,输入的用户名被脚本匹配到则使用白名单里的配置；否则强制需要密码.
-
-白名单配置格式:
-
-```
-用户名:密码
-## example: appuser:12345678
 ```
 
 ### 与ansible搭配使用
