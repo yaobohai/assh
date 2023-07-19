@@ -1,6 +1,6 @@
 ## SSH管理工具
 
-一个适用于MacOS的用于快速连接ssh的脚本工具
+一个适用于的用于快速连接ssh的脚本工具
 
 ### 概述
 
@@ -12,28 +12,55 @@
 
 ### 1.初始化
 
+安装expect
+
+```shell
+MacOS
+$ brew install expect
+
+Linux
+$ yum install expect
+```
+
 拉取代码
 
 ```shell
+MacOS
 $ git clone https://github.com/yaobohai/assh.git /Users/$(whoami)/Documents/assh
+
+Linux
+$ git clone https://github.com/yaobohai/assh.git /usr/local/assh/
 ```
 
 更新主机清单
 
 ```shell
+MacOS
 $ vim /Users/$(whoami)/Documents/assh/hosts
+
+Linux
+$ vim /usr/local/hosts/hosts
 ```
 
 配置环境变量
 
 ```shell
+MacOS
 $ vim ~/.zshrc
+alias assh='/Users/$(whoami)/Documents/assh/assh.sh'
+
+Linux
+$ vim ~/.bashrc
 alias assh='/Users/$(whoami)/Documents/assh/assh.sh'
 ```
 增加权限
 
 ```shell
-chmod +x /Users/$(whoami)/Documents/assh/*.sh
+MacOS
+$ chmod +x /Users/$(whoami)/Documents/assh/*.sh
+
+Linux
+$ chmod +x /usr/local/assh/*.sh
 ```
 
 ### 2.交互式菜单
@@ -85,7 +112,7 @@ $ assh -o 用户名@IP -p 密码
 ```shell
 $ vim /etc/ansible/ansible.cfg
 [defaults]
-inventory      = /Users/替换为你的用户名/Documents/assh/hosts
+inventory      = assh脚本路径/hosts
 ```
 
 运行
@@ -107,24 +134,3 @@ $ ansible -m ping demo
     "ping": "pong"
 }
 ```
-
-### 在Linux环境中使用
-
-在Linux中使用该脚本 与macos没有太大区别，唯一需要注意的只是脚本位置以及expect命令
-
-1、安装expect
-
-```shell
-$ yum -y install expect
-```
-
-2、更新脚本路径
-
-```shell
-# 无需改动，直接执行即可
-sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' README.md
-sed -i 's/\/Users\/替换为你的用户名\/Documents\/assh/\/usr\/local\/assh/g' README.md
-sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' assh.sh
-```
-
-3、查看本机的README.md 进行使用

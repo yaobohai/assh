@@ -4,7 +4,7 @@ declare -i i=0
 export LC_CTYPE=en_US
 
 # 脚本路径
-scripts_dir="/Users/$(whoami)/Documents/assh"
+scripts_dir="$(dirname $0)" ; cd ${scripts_dir}
 
 # 用户密码清单路径
 authfile_file_path="${scripts_dir}/authfile"
