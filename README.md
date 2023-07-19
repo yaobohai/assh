@@ -107,3 +107,23 @@ $ ansible -m ping demo
     "ping": "pong"
 }
 ```
+
+### 在Linux环境中使用
+
+在Linux中使用该脚本 与macos没有太大区别，唯一需要注意的只是脚本位置以及expect命令
+
+1、安装expect
+
+```shell
+$ yum -y install expect
+```
+
+2、更新脚本路径
+
+```shell
+sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' README.md
+sed -i 's/\/Users\/替换为你的用户名\/Documents\/assh/\/usr\/local\/assh/g' README.md
+sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' assh.sh
+```
+
+3、查看本机的README.md 进行使用
