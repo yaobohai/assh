@@ -121,6 +121,7 @@ $ yum -y install expect
 2、更新脚本路径
 
 ```shell
+# 无需改动，直接执行即可
 sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' README.md
 sed -i 's/\/Users\/替换为你的用户名\/Documents\/assh/\/usr\/local\/assh/g' README.md
 sed -i 's/\/Users\/$(whoami)\/Documents\/assh/\/usr\/local\/assh/g' assh.sh
