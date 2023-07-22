@@ -12,14 +12,24 @@
 
 
 打印清单  
+
 ![连接示例](./static/assh-01.gif)
 
 序号连接  
+
 ![连接示例](./static/assh-02.gif)
 
 增删主机  
+
 ![连接示例](./static/assh-03.gif)
 
+## 一键安装
+
+```
+curl -s https://raw.githubusercontent.com/yaobohai/assh/main/install.sh | bash -s 
+```
+
+## 手动安装
 
 ### 1.初始化
 
