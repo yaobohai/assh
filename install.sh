@@ -25,7 +25,7 @@ if [[ $platform == 'Linux' ]];then
 	install_path="/usr/local/assh/";check_command git expect;install_assh
 	chmod +x /usr/local/assh/*.sh
 	echo "alias assh="'"/usr/local/assh/assh.sh"'"" >> ~/.bashrc
-	echo -e "1. Enter bash to reload the terminal\n2. Please configure the host list /usr/local/ssh/hosts\n3. Enter assh on the terminal to start using it!"
+	echo -e "1. Enter bash to reload the terminal\n2. Please configure the host list /usr/local/assh/hosts\n3. Enter assh on the terminal to start using it!"
 elif [[ $platform == 'Darwin' ]];then
 	install_path="/Users/$(whoami)/Documents/assh/";check_command git expect;install_assh
 	chmod +x /Users/$(whoami)/Documents/assh/*.sh
