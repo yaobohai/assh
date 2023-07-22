@@ -17,7 +17,7 @@ install_assh(){
 
 check_command(){
         for commands in $@;do
-            if [[ ! -n $(command -v $commands) ]];then echo "$1 noexist,please install $commands before continuing";exit 137;fi
+            if [[ ! -n $(command -v $commands) ]];then echo "$@ noexist,please install $commands before continuing";exit 137;fi
         done
 }
 
